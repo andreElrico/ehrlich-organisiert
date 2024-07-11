@@ -1,0 +1,43 @@
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the theme object.
+$ehrlich-organisiert-theme: mat.define-theme((
+  color: (
+    theme-type: light,
+    primary: mat.$azure-palette,
+    tertiary: mat.$blue-palette,
+  ),
+  density: (
+    scale: 0,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+:root {
+  @include mat.all-component-themes($ehrlich-organisiert-theme);
+}
+
+// Variables
+:root,:host{--sys-background:#f6fafe;--sys-on-background:#181c1f;--sys-surface:#f6fafe;--sys-surface-dim:#d7dadf;--sys-surface-bright:#f6fafe;--sys-surface-container-lowest:#ffffff;--sys-surface-container-low:#f0f4f8;--sys-surface-container:#ebeef3;--sys-surface-container-high:#e5e8ed;--sys-surface-container-highest:#dfe3e7;--sys-on-surface:#181c1f;--sys-surface-variant:#dde3ea;--sys-on-surface-variant:#41484d;--sys-inverse-surface:#2d3135;--sys-inverse-on-surface:#eef1f6;--sys-outline:#71787e;--sys-outline-variant:#c1c7ce;--sys-shadow:#000000;--sys-scrim:#000000;--sys-surface-tint:#226488;--sys-primary:#226488;--sys-on-primary:#ffffff;--sys-primary-container:#c7e7ff;--sys-on-primary-container:#001e2e;--sys-inverse-primary:#93cdf6;--sys-secondary:#216487;--sys-on-secondary:#ffffff;--sys-secondary-container:#c6e7ff;--sys-on-secondary-container:#001e2d;--sys-tertiary:#65558f;--sys-on-tertiary:#ffffff;--sys-tertiary-container:#e9ddff;--sys-on-tertiary-container:#201047;--sys-error:#904a43;--sys-on-error:#ffffff;--sys-error-container:#ffdad5;--sys-on-error-container:#3b0907;--sys-neutral:#73777b;--sys-neutral-variant:#71787e;--sys-primary-fixed:#c7e7ff;--sys-primary-fixed-dim:#93cdf6;--sys-on-primary-fixed:#001e2e;--sys-on-primary-fixed-variant:#004c6c;--sys-secondary-fixed:#c6e7ff;--sys-secondary-fixed-dim:#92cef5;--sys-on-secondary-fixed:#001e2d;--sys-on-secondary-fixed-variant:#004c6b;--sys-tertiary-fixed:#e9ddff;--sys-tertiary-fixed-dim:#cfbdfe;--sys-on-tertiary-fixed:#201047;--sys-on-tertiary-fixed-variant:#4d3d75;--sys-inverse-secondary:#92cef5;--sys-inverse-tertiary:#cfbdfe;--sys-inverse-error:#ffb4ab;--sys-error-fixed:#ffdad5;--sys-error-fixed-dim:#ffb4ab;--sys-on-error-fixed:#3b0907;--sys-on-error-fixed-variant:#73342d;}
+
+
+// Comment out the line below if you want to use the pre-defined typography utility classes.
+// For more information: https://material.angular.io/guide/typography#using-typography-styles-in-your-application.
+// @include mat.typography-hierarchy($ehrlich-organisiert-theme);
+
+// Comment out the line below if you want to use the deprecated `color` inputs.
+// @include mat.color-variants-backwards-compatibility($ehrlich-organisiert-theme);
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
